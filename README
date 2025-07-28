@@ -24,7 +24,7 @@ libglx-dev libgl-dev libxi-dev libsdl2-dev
 
 Edit CUDA_DIR in configure to set your CUDA location.
 
-
+Build and install `popt` https://github.com/rpm-software-management/popt/tree/master
 
 Run ./configure.  Then run make.  Then run 'make install' to put it in the
 bin/ directory.  Run ./cinelerra.sh in the bin/ directory.
