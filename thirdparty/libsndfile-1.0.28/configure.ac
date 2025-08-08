@@ -694,3 +694,9 @@ echo "    Stack smash protection : .............. ${enable_stack_smash_protectio
 
 # Remove symlink created by Scripts/android-configure.sh.
 rm -f gdbclient
+
+# The 'python' command is not always created on Linux systems when the Python is installed..
+AC_PATH_PROGS([PYTHON], [python python3 python2 pypy jython ironpython], [no])
+if test "$PYTHON" = "no"; then
+  AC_MSG_ERROR([No usable python found (tried: python, python3, python2, pypy, jython, ironpython)])
+fi
