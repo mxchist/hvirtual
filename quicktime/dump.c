@@ -6,7 +6,7 @@
 
 
 
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	quicktime_t *file;
 	int result = 0;

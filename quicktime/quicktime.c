@@ -1,4 +1,4 @@
-#include "colormodels.h"
+#include "../guicast/colormodels.h"
 #include "funcprotos.h"
 #include "qtasf.h"
 #include "qtasf_codes.h"
