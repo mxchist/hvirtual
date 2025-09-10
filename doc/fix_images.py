@@ -61,7 +61,7 @@ HTML_PATH='../bin/doc/cinelerra.html'
 
 
 #filename = sys.argv[1]
-print 'Reading', HTML_PATH
+print (' '.join(('Reading', HTML_PATH)))
 # read it
 file = open(HTML_PATH, 'r')
 
@@ -139,7 +139,7 @@ if gotOne:
     file = open(HTML_PATH, 'w')
     for i in dst:
         file.write(i)
-    print 'Wrote new ' + HTML_PATH
+    print (' '.join(('Wrote new ', HTML_PATH)))
 
 
 
