@@ -78,6 +78,18 @@ CUSTOM_IMAGES := \
         vpatches.png \
         zoompanel.png
 
+PYTHON := $(shell \
+    for p in python python3 python2 pypy jython ironpython; do \
+        if command -v $$p >/dev/null 2>&1; then \
+            echo $$p; \
+            break; \
+        fi; \
+    done; \
+)
+
+ifeq ($(PYTHON),)
+$(error "No usable python found (tried: python, python3, python2, pypy, jython, ironpython)")
+endif
 
 all:
 	mkdir -p $(TARGET_DIR)
@@ -89,7 +101,7 @@ all:
 	cp $(CUSTOM_IMAGES) $(TARGET_DIR)
 # use this to create a single document.
 	cd $(TARGET_DIR) && makeinfo --html --no-split ../../doc/cinelerra.texi
-	./fix_images.py
+	$(PYTHON) fix_images.py
 # use this to create multiple HTML pages.  Not searchable
 #	cd $(TARGET_DIR) && makeinfo --html ../../doc/cinelerra.texi
 
